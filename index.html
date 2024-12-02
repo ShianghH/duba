@@ -15,33 +15,25 @@
         <source src="/duba/ROSÉ & Bruno Mars - APT. (Official Lyric Video).mp3" type="audio/mpeg">
         您的瀏覽器不支持音頻播放。
     </audio>
-    <section class="text-center">
-        <button onclick="playMusic()">播放音樂</button>
-        <button onclick="pauseMusic()">暫停音樂</button>
-    </section>
+    
     
     <!-- 自動播放背景音樂 -->
     <audio id="backgroundMusic" autoplay loop>
         <source src="/duba/ROSÉ & Bruno Mars - APT. (Official Lyric Video).mp3" type="audio/mpeg">
         您的瀏覽器不支持音頻播放。
     </audio>
-
+    <section class="text-center">
+        <button onclick="playMusic()">播放音乐</button>
+    </section>
+   
     <script>
-        // 自動播放處理：解決現代瀏覽器限制問題
-        window.addEventListener('load', () => {
-            const music = document.getElementById('backgroundMusic');
-            const playPromise = music.play();
+        const music = document.getElementById('backgroundMusic');
 
-            if (playPromise !== undefined) {
-                playPromise
-                    .then(() => {
-                        console.log("音樂已成功播放。");
-                    })
-                    .catch(error => {
-                        console.log("自動播放被阻止，請要求用戶點擊以啟動音樂。", error);
-                    });
-            }
-        });
+        function playMusic() {
+            music.play()
+                .then(() => console.log('音乐已播放'))
+                .catch(error => console.error('播放失败:', error));
+        }
     </script>
     
 </body>
