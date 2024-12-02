@@ -10,7 +10,32 @@
     <section class="container pt-5">
         <h1 class="text-center fw-bold">準備好我給你準備的驚喜了嗎?</h1>
     </section>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="/duba/ROSÉ - number one girl (official music video).mp3" type="audio/mpeg">
+        您的瀏覽器不支持音頻播放。
+    </audio>
+    <section class="text-center">
+        <button onclick="playMusic()">播放音樂</button>
+        <button onclick="pauseMusic()">暫停音樂</button>
+    </section>
+    
+    <script>
+        // 自動播放處理：解決現代瀏覽器限制問題
+        window.addEventListener('load', () => {
+            const music = document.getElementById('backgroundMusic');
+            const playPromise = music.play();
 
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        console.log("音樂已成功播放。");
+                    })
+                    .catch(error => {
+                        console.log("自動播放被阻止，請要求用戶點擊以啟動音樂。", error);
+                    });
+            }
+        });
+    </script>
     
 </body>
 </html>
