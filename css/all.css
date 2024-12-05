@@ -13762,7 +13762,7 @@ textarea.form-control-lg {
 }
 
 .bgone{
-  background-image: url(/img/bg2.jpg);
+  background-image: url(../img/bg2.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
