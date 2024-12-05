@@ -13763,7 +13763,8 @@ textarea.form-control-lg {
 
 .bgone{
   background-image: url(../img/bg2.jpg);
-  background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover; /* 改為 cover 以覆蓋整個背景 */
+  height: 100vh; /* 設定容器高度以便顯示背景 */
+  width: 100%; /* 設定容器寬度 */
 }
